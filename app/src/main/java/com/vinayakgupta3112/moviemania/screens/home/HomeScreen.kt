@@ -37,7 +37,7 @@ fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                backgroundColor = Color.Magenta,
+                backgroundColor = Color.LightGray,
                 elevation = 5.dp
             ) {
                 Text(text = "Movies")
@@ -66,7 +66,7 @@ fun MainContent(
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
                     Log.d("Movie", movie)
-                    navController.navigate(route = MovieScreens.DetailsScreen.name)
+                    navController.navigate(route = MovieScreens.DetailsScreen.name+"/$movie")
                 }
             }
         }
